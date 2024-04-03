@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>EarthVQA</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- <base href="/"> -->
+
+    <!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+    <link rel="icon" type="image/png"
+        href="https://github.com/Junjue-Wang/FactSeg/blob/master/imgs/myicon.jpg?raw=true">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110862391-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110862391-3');
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
+                Adaptive Self-supporting Prototype Learning for  </br>Remote Sensing Few-Shot Semantic Segmentation
+               </br>
+                <small>
+                    
+                </small>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        Weihao Shen
+                    </li>
+                    <li>
+                        Ailong Ma
+                    </li>
+                    <li>
+                        <a href="https://junjue-wang.github.io/homepage/">
+                            Junjue Wang
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://zhuozheng.top/">
+                            Zhuo Zheng
+                        </a>
+                    </li>
+                
+              
+                    <li>
+                        <a href="http://rsidea.whu.edu.cn/">
+                            Yanfei Zhong
+                        </a>
+                    </li>
+
+                </ul>
+                <small>
+
+                </small>
+            </div>
+        </div>
+
+
+<!-- 
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a
+                            href="https://www.researchgate.net/publication/376519677_EarthVQA_Towards_Queryable_Earth_via_Relational_Reasoning-based_Remote_Sensing_Visual_Question_Answering">
+                            <image src="research_src/EarthVQA/paper_overview.png" height="120px"></image><br>
+                            <h4><strong>Paper</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-01-08/qd43oo1/Poster-AAAI.pdf">
+                            <image src="research_src/EarthVQA/poster.png" height="120px"></image><br>
+                            <h4><strong>Poster</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-01-08/2q83o0t/EarthVQA-video.mp4">
+                            <image src="research_src/EarthVQA/video.png" height="120px"></image><br>
+                            <h4><strong>Video</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div> -->
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <!-- <image src="research_src/EarthVQA/dataset_vis.png" class="img-responsive" alt="overview"><br></image>
+                <image src="research_src/EarthVQA/framework.png" class="img-responsive" alt="overview"><br></image> -->
+                <!-- <p class="text-justify">This is follow-up work of our <a
+                        href="https://Junjue-Wang.github.io/homepage/LoveDA" style="color: #0000cc">LoveDA
+                        (NeurIPS2021)</a>
+                </p> -->
+                <p class="text-justify">
+                    The semantic segmentation of remote sensing images with few shots has important
+                    theoretical and application values. Most of the existing few-shot semantic segmentation
+                    frameworks are based on prototype learning methods, in which a single support prototype is
+                    designed to guide the query set for prediction. However, the visual differences between
+                    the support set and the query set make it difficult for a single support prototype,
+                    generated from the support set, to comprehensively encapsulate the semantic information
+                    of all query images.
+                    This paper introduces an adaptive self-supporting prototype learning network
+                    designed for few-shot segmentation in order to tackle the challenges
+                    mentioned earlier.
+                    We propose adaptive hyper prototype representation (HPR), which consists of
+                    hyper prototype clustering (HPC) and guided prototype matching (GPM) to
+                    generate and assign multiple representative prototypes to compensate for the
+                    limitations of a single prototype in representing semantic information of query
+                    images. Specifically, HPC is a parameter-free and adaptive approach, which can
+                    extract more representative prototypes by aggregating similar feature vectors
+                    utilizing superpixel feature clustering, while GPM can select matched
+                    prototypes to provide more accurate guidance, allowing for uniformly aligned
+                    representation of multiple prototypes and complex image semantic information.
+                    We introduce a self-supporting matching (SSM) prototype learning that
+                    accurately guides query set segmentation by acquiring query set prototypes. SSM
+                    generates initial pseudo-labels for the query set based on the support set
+                    prototypes, and further guides the query set using the pseudo-labels along with
+                    the query prototypes generated by its own features, thus effectively avoiding
+                    visual differences between support set and query set. Our adaptive
+                    self-supporting prototype learning network substantially improves the prototype
+                    quality and achieves superior performance on object-level remote sensing
+                    datasets.
+
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                         <h3>
+                    Method
+                </h3>
+
+        <image src="research_src/SSMP/SSMP.jpg" class="img-responsive" alt="overview"><br></image>
+
+        <h3>
+            Experiments on iSAID-5i
+        </h3>
+                <!-- <image src="research_src/EarthVQA/result.png" class="img-responsive" alt="overview"><br></image> -->
+
+                <image src="research_src/SSMP/VIZ.jpg" class="img-responsive" alt="overview"><br></image>
+                <image src="research_src/SSMP/iSAID.jpg" class="img-responsive" alt="overview"><br></image>
+
+
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    BibTeX
+                </h3>
+                <pre data-role="codeBlock" data-info="text" class="language-text">
+@article{shen2024ssmp, 
+                    title={Adaptive Self-supporting Prototype Learning for Remote Sensing Few-Shot Semantic Segmentation},
+                    url={}, 
+                    DOI={}, 
+                    author={Shen, Weihao and Ma, Ailong and Wang, Junjue and Zheng, Zhuo and Zhong, Yanfei}, 
+                    year={}, 
+                    month={},
+                    volume={},
+                    pages={}}
+
+                </pre>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgments
+                </h3>
+                This work was supported by National Natural Science Foundation of China under Grant Nos. 42325105,
+                42071350, and 42171336.
+                <br><br>
+                The website template was borrowed from <a href="https://bowenc0221.github.io/">Bowen Cheng</a> and <a
+                    href="http://mgharbi.com/">Michaël Gharbi</a>.
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</body>
+
+</html>
